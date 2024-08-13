@@ -1,0 +1,16 @@
+ int ledPin = 3; 
+ int potPin = A0; 
+ int brightness;
+void setup() {
+  pinMode(ledPin, OUTPUT); 
+ Serial.begin(9600);
+}
+
+void loop() {
+  brightness = analogRead(potPin); 
+
+int intensidad = map (brightness, 0, 1023, 0, 255);
+  analogWrite(ledPin, intensidad); 
+  Serial.println(intensidad);
+
+}
